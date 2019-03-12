@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Pictionary</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <script src="https://npmcdn.com/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <aside></aside>
+        <main>
+            <h1>{{ title }}</h1>
+            <div class="game">
+                <div class="generate" @click="generateWord">Generate</div>
+                <div class="levels">
+                    <div class="easy level" @click="chooseLevel('easy')">easy</div>
+                    <div class="medium level" @click="chooseLevel('medium')">medium</div>
+                    <div class="hard level" @click="chooseLevel('hard')">difficult</div>
+                    <div class="vhard level" @click="chooseLevel('vhard')">very difficult</div>
+                </div>
+                <div class="word-display">{{ word }}</div>
+            </div>
+        </main>
+        <div class="score-board">
+            <button class="generate" @click="addTeam">Add Team</button>
+            <template v-for="(team, index) in teams">
+                <div class="team" :team="team">
+                    <div class="board">{{ team.name }}</div>
+                    <div class="counter">{{ team.counter }}</div>
+                    <button @click="increaseScore(index)">Add score</button>
+                </div>
+            </template>
+        </div>
+    </div>
+    <script src="bundle.js"></script>
+</body>
+</html>

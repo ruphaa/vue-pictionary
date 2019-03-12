@@ -1,0 +1,170 @@
+html {
+    font-size: 10px;
+}
+
+body {
+    box-sizing: border-box;
+    font-size: 1.5rem;
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Lobster', cursive;
+}
+
+* {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+#app {
+    display: flex;
+}
+
+aside {
+    width: 15%;
+    height: 100vh;
+    background-color: #9EC4DB;
+}
+
+main {
+    flex: 1;
+}
+
+main h1 {
+    font-size: 7rem;
+    margin-top: 2rem;
+    margin-left: -12rem;
+    color: #CC2C70;
+}
+
+main .game {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.generate {
+    border: 1px solid #CC2C70;
+    width: 20rem;
+    height: 5rem;
+    font-size: 3rem;
+    color: #CC2C70;
+    font-family: 'Lobster', cursive;
+    margin-top: 4rem;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.generate:hover {
+    color: #fff !important;
+    background-color: transparent; 
+}
+
+.generate:before {
+    display: block;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	height: 100%;
+	width: 0px;
+	z-index: -1;
+	content: '';
+	color: #000 !important;
+	background: #CC2C70;
+	transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+.generate:hover:before {
+    left: 0%;
+	right: auto;
+	width: 100%;
+}
+
+.levels {
+    display: flex;
+    margin-top: 3rem;
+}
+
+.level {
+    align-items: center;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    background-color: #CC2C70;
+    margin-left: 25px;
+    text-transform: capitalize;
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    cursor: pointer;
+}
+
+.level:hover {
+    background-color: #fff;
+    color: #CC2C70;
+    border: 1px solid #CC2C70;
+}
+
+.word-display {
+    width: 80%;
+    height: 20rem;
+    background-color: #9EC4DB;
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #AA245E;
+    font-size: 3rem;
+}
+
+.score-board {
+    flex-basis: 20%;
+    display: flex;
+    flex-direction: column;
+}
+
+.score-board .generate {
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.score-board .generate:focus {
+    outline: none;
+}
+
+.team {
+    background-color: #9EC4DB;
+    margin-top: 10px;
+    flex: 1;
+    color: #AA245E;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.team .board {
+    font-size: 2rem;
+    text-transform: capitalize;
+}
+
+.team .counter {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.team button {
+    background-color: #AA245E;
+    color: #fff;
+    border: transparent;
+    padding: 5px;
+}
+
+.team button:focus {
+    outline: none;
+}
